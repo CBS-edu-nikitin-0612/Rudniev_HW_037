@@ -9,9 +9,9 @@ namespace Task2
         
         static void Main(string[] args)
         {
-            Human human1 = new Human("RD300400", Sex.female, 32, "Lviv, Ukraine", "Product manager", "Pedro");
+            Human human = new Human("RD300400", Sex.female, 32, "Lviv, Ukraine", "Product manager", "Pedro");
             Console.WriteLine("Created new instance of Human...");
-            Console.WriteLine(human1.ToString());
+            Console.WriteLine(human.ToString());
 
             XmlSerializer serializer = new XmlSerializer(typeof(Human));
             FileStream stream;
@@ -19,7 +19,7 @@ namespace Task2
             {
                 using (stream = new FileStream("Serialization.xml", FileMode.Create, FileAccess.Write))
                 {
-                    serializer.Serialize(stream, human1);
+                    serializer.Serialize(stream, human);
                 }
                 Console.WriteLine("Object serializated...\n");
             }
@@ -28,16 +28,15 @@ namespace Task2
                 Console.WriteLine(e.Message);
             }
 
-            Human human2;
             try
             {
                 using (stream = new FileStream("Serialization.xml", FileMode.Open, FileAccess.Read))
                 {
-                    human2 = serializer.Deserialize(stream) as Human;
+                    human = serializer.Deserialize(stream) as Human;
                 }
                 Console.WriteLine("Object deserializated...");
                 Console.WriteLine("New instance of Human: ");
-                Console.WriteLine(human2.ToString());
+                Console.WriteLine(human.ToString());
             }
             catch (Exception e)
             {

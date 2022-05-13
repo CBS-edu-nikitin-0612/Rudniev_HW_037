@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace aditionalTask
 {
+    [Serializable]
     public class Human
     {
         private Sex gender;

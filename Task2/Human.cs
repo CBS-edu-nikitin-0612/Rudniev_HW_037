@@ -25,9 +25,9 @@ namespace Task2
         public string Location { get => location; set => location = value; }
         [XmlAttribute("Name")] //Task2.2
         public string Name { get => name; set => name = value; }
-        [XmlAttribute("Gender")]
+        [XmlAttribute("Gender")]//Task2.2
         public Sex Gender { get => gender; set => gender = value; }
-        [XmlAttribute("Passport")]
+        [XmlAttribute("Passport")]//Task2.2
         public string Passport { get => passport; set => passport = value; }
 
         public Human(string passport, Sex gender, int age, string location, string profession, string name)

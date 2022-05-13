@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+//using System.Reflection;
 using System.Xml.Serialization;
 using Task2;
 
@@ -13,6 +14,9 @@ namespace Task3
 
             XmlSerializer serializer = new XmlSerializer(typeof(Human));
             FileStream stream;
+
+            //Assembly assembly = Assembly.Load("Task2");
+            //Console.WriteLine(assembly.Location);
 
             try
             {
